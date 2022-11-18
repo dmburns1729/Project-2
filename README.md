@@ -31,4 +31,34 @@ Age is negatively correlated with accidents.  It is also positively correlated w
 
 Driving experience is also strongly negatively correlated with crashing ones car.  Of course, age and driving experience are also positively correlated.
 
-These two factors were the most strongly (negatively) correlated with accidents. 
+These two factors were the most strongly (negatively) correlated with accidents.
+
+## Model
+
+I ran several (trained) classificaiton models and an (untrained) segmentation model.  I ran them all several times and varied parameters, dropped data, imputed it different ways. etc.  The classificaiton models I ran were logistic regression, random forest classifier, K N Neighbors, XGB Classifier, LGBM Classifier, Gradient Boosting Classifier.  
+
+## Clustering Analysis
+
+Age and driving experience are the driving factors in predicting whether or not someone will have an accident. That is, the older and more experience one has driving, the lower the probability that one will have an accident.
+
+As I noted before, as you get older, your income, credit score, chance of being married, children, etc all go up. However, so does your number of speeding violations, DUIs, and past accidents. I would recommend that the insurance company limit these items to a limited look back - i.e. violations drop off your record after a certain amount of years.
+
+Gender, race, and vehicle type seem to have little correlation with wrecking your car. However, I left them in the analysis due to a couple of interesting findings.
+
+First, adding race functionally duplicated the clusters without adding much additional value. Cluster 1 and 4 are essentially young people, white and minority respectively. Both have little driving experience, don't own their car (maybe drive mom and dad's car?) low eduction and income, and considerably higher chance of wrecking their car.
+
+Clusters 0 and 3 are both older, more responsible married people with higher income and lower chance of accidents and are white and people of color respectively.
+
+The clusters I think are intersting are 2 and "unclustered." Both are older, higher income, and more driving experience. Interestingly, they both drive sports cars. However, they are very different. Cluster 2 are responsible, married, and have the lowest accident rates. These are "pride of ownership cluster."  I wonder if they are more likely to regularly wash their cars and perhsps use premium fuel.  
+
+The 'Unclustered" are unmarried, have lots of DUIs, speeding tickets, and accidents. I call this the mid-life crisis "cluster."
+
+## Limitation, Recommendations, and Next Steps
+
+One of the best measured by accuracy and recall (and definitely the fastest) was logistic regression.  I ran logistic regression with PCA feature engineering but due to the dataset (mostly categorical data)  it didn't help much. It ran a little faster but slightly worse results.  I suggest logistic regression due to speed, accuracy, and recall scores.
+
+The data itself could be improved.  The driving record, DUIs, etc should be subject to a shorter lookback.  There are more factors that may also be useful in determining if someone will crash their car. The most value may be found in parcing out why some young people get into accidents - grades, drivers' education, etc.  
+
+### For Further Information
+
+For any additional questions, please contact me at dmburns@gmail.com
