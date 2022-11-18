@@ -1,6 +1,3 @@
-# Please note Read ME is incomplete.  I wanted to submit before deadline but will work on the readme over the weekend
-
-
 # Analysis of Insurance Data - Beware the Young and the Old Guy in the Convertible
 Author: David Burns <br>
 Date: 11/17/2022
