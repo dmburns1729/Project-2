@@ -19,12 +19,11 @@ We did exploratory data visualization analysis of:
 
 ### Examples of the visualizations
 
-![Screen Shot 2022-11-17 at 10 42 22 PM](https://user-images.githubusercontent.com/113855848/202638132-c86351c9-0937-4bd7-9678-6cb0e58e6aa3.png)
+![Screen Shot 2022-11-20 at 7 58 43 PM](https://user-images.githubusercontent.com/113855848/202962631-5356ec32-52a8-492b-b870-9ecaaf51b998.png)
 
-Age is negatively correlated with accidents.  It is also positively correlated with driving experience, DUIs, marriage, kids, and speeding tickets.  It looks like the data is cumulative over a drivers life.  I would recommend that these items sunset after a time.
+A useful view of the data is percent claims by age groups.  Age is also positively correlated with driving experience, DUIs, marriage, kids, and speeding tickets.  It looks like the data is cumulative over a drivers life.  I would recommend that these items sunset after a time.
 
-
-![Screen Shot 2022-11-17 at 10 43 58 PM](https://user-images.githubusercontent.com/113855848/202638345-f496b2d8-265c-4648-a2f1-75a191fe612e.png)
+![Screen Shot 2022-11-20 at 8 02 26 PM](https://user-images.githubusercontent.com/113855848/202963016-be11d20e-19b0-4de3-8121-5b151f70abc5.png)
 
 Driving experience is also strongly negatively correlated with crashing ones car.  Of course, age and driving experience are also positively correlated.
 
@@ -34,21 +33,24 @@ These two factors were the most strongly (negatively) correlated with accidents.
 
 I ran several (trained) classificaiton models and an (untrained) segmentation model.  I ran them all several times and varied parameters, dropped data, imputed it different ways. etc.  The classificaiton models I ran were logistic regression, random forest classifier, K N Neighbors, XGB Classifier, LGBM Classifier, Gradient Boosting Classifier.  
 
+The most important factor we were optimizing for was recall.  Not predicting an accident (false negative) is much more expensive than missing out on a potential customer.  Based on accuracy and recall, logistic regression (classification) and some of the gradient boosting models worked about equally at ~.84 accuracy and .15 false negative rate.  
+
+I chose the logistic regression model due to its very competitive accuracy and recall and very quick processing time.
+
+
 ## Clustering Analysis
 
-Age and driving experience are the driving factors in predicting whether or not someone will have an accident. That is, the older and more experience one has driving, the lower the probability that one will have an accident.
+Age and driving experience are the driving factors in predicting whether or not someone will have an accident.  That is, the older and more experience one has driving, the lower the probability that one will have an accident.  
 
-As I noted before, as you get older, your income, credit score, chance of being married, children, etc all go up. However, so does your number of speeding violations, DUIs, and past accidents. I would recommend that the insurance company limit these items to a limited look back - i.e. violations drop off your record after a certain amount of years.
+As I noted before, as you get older, your income, credit score, chance of being married, children, etc all go up. However, so does your number of speeding violations, DUIs, and past accidents. I would recommend that the insurance company limit these items to a limited look back - i.e. violations drop off your record after a certain amount of years. 
 
-Gender, race, and vehicle type seem to have little correlation with wrecking your car. However, I left them in the analysis due to a couple of interesting findings.
+Gender, race, and vehicle type seem to have little correlation with wrecking your car.  However, I left them in the analysis due to a couple of interesting findings.  
 
-First, adding race functionally duplicated the clusters without adding much additional value. Cluster 1 and 4 are essentially young people, white and minority respectively. Both have little driving experience, don't own their car (maybe drive mom and dad's car?) low eduction and income, and considerably higher chance of wrecking their car.
+First, adding race functionally duplicated certain clusters without adding much additional value. I ran this clustering several times and sometimes I got four columns, one older white people, one older minority, one young white people, one younger minority people.  
 
-Clusters 0 and 3 are both older, more responsible married people with higher income and lower chance of accidents and are white and people of color respectively.
+Here, all the young people are clustered in cluster 4.  They have little driving experience, don't own their car, and have alots of insurance claims. They also live in the same postal code as cluster 1 who I suspect are largely their parents!
 
-The clusters I think are intersting are 2 and "unclustered." Both are older, higher income, and more driving experience. Interestingly, they both drive sports cars. However, they are very different. Cluster 2 are responsible, married, and have the lowest accident rates. These are "pride of ownership cluster."  I wonder if they are more likely to regularly wash their cars and perhsps use premium fuel.  
-
-The 'Unclustered" are unmarried, have lots of DUIs, speeding tickets, and accidents. I call this the mid-life crisis "cluster."
+The clusters I think are intersting are 3 and "unclustered."  Both are older, higher income, and more driving experience.  Interestingly, they both drive sports cars.  However, they are very different.  Cluster 3 are responsible, women, married, and have low accident rates. These are "pride of ownership cluster."  The 'unclustered" are unmarried, have lots of DUIs, speeding tickets, and accidents.  I call this the mid-life crisis "cluster."  
 
 ## Limitation, Recommendations, and Next Steps
 
