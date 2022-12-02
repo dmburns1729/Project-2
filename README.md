@@ -6,7 +6,7 @@ Date: 11/17/2022
 The goal of this project is to explore car insurance data to determine the factors that will lead to insurance claims.
 
 ### Data
-The initial data contained 10,000 rows of data and 18 columns of variables that could impact sales and 1 column of 'outcome', or claim data.   The original source of the data is on Kaggle.  The target of the data is whether or not person files a claim. The notes say "The outcome column indicates 1 if a customer has claimed his/her loan else 0" I take this to mean that a 1 is a total loss resulting in the person filing a claim to pay off the car loan.
+The initial data contained 10,000 rows of data and 18 columns of variables that could impact sales and 1 column of 'outcome,' or claim data.   The original source of the data is on Kaggle.  The target of the data is whether or not person files a claim. The notes say "The outcome column indicates 1 if a customer has claimed his/her loan else 0" I take this to mean that a 1 is a total loss resulting in the person filing a claim to pay off the car loan.
 
 ## Methods
 I first examined the data and cleaned up some obvious errors. Most of the data was categorical which I ordinal encoded.  I visually inspected the data and discovered missing data points in credit score and annual miles.  
