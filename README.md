@@ -61,5 +61,4 @@ The data itself could be improved.  The driving record, DUIs, etc should be subj
 ### For Further Information
 
 For any additional questions, please contact me at dmburns@gmail.com
-![image](https://user-images.githubusercontent.com/113855848/205363893-1968892f-1931-4bcc-85a3-0e3d8aa63cbc.png)
 
