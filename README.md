@@ -1,6 +1,6 @@
 # Analysis of Insurance Data - Beware the Young and the Old Guy in the Convertible
 Author: David Burns <br>
-Date: 11/17/2022
+Date: 11/17/2022 (revised 12/2/2022)
 
 ## Business Problem
 The goal of this project is to explore car insurance data to determine the factors that will lead to insurance claims.
